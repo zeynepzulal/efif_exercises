@@ -74,14 +74,20 @@ while (x < 10)
 
 
 //Aufgabe D4
-Console.WriteLine("Please enter a positive number");
-int zahl;
+
+
 try
 {
-    zahl = int.Parse(Console.ReadLine());
-    while (zahl > 0)
-    {
-        Console.WriteLine(zahl + "is positive");
+   int zahl;
+    while (true)
+    {   Console.WriteLine("Please enter a positive number");
+        zahl = int.Parse(Console.ReadLine());
+        Console.WriteLine(zahl + " is positive, continue"); 
+        if(zahl < 0)
+        {
+            Console.WriteLine("negative number");
+            break;
+        }
     }
 
 }
