@@ -115,18 +115,31 @@ for (int i = 2; i <= 100; i++)
         }
 
         return true;
-        
+
 
     }
     /*
     Console.WriteLine("sayi: " + i);
     Console.WriteLine(isPrimeNum(testNum));
     */
-    if(isPrimeNum(testNum) == true)
+    if (isPrimeNum(testNum) == true)
     {
         Console.WriteLine("sayi: " + i);
     }
 
 }
 
+
+// G4
+string sentences = "Nerds sind nicht normal";
+
+int length = 0;
+int countofN = 0;
+foreach (var charachter in sentences)
+{
+    Console.WriteLine(charachter);
+    length++;
+    Console.WriteLine("length of sentences: " + length);
+
+}
 
