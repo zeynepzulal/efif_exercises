@@ -34,8 +34,14 @@ static void SayHi(string name)
 
 //Aufgaben G
 
+//G1 - 1
+static void AnswerToEverything()
+{
+    Console.WriteLine("42");
+}
+
+
 //G1 - 2
-using System.Security;
 
 int num1 = 6;
 int num2 = 7;
@@ -54,7 +60,7 @@ Console.WriteLine("enter a number");
 int enteredNum = int.Parse(Console.ReadLine());
 static bool isEven(int a)
 {
-    if(a % 2 == 0)
+    if (a % 2 == 0)
     {
         return true;
     }
@@ -92,3 +98,35 @@ static int celcilusToFahrenheit(int c)
 Console.WriteLine(celcilusToFahrenheit(celcileus));
 
 //G3
+
+for (int i = 2; i <= 100; i++)
+{
+    int testNum = i;
+    static bool isPrimeNum(int k)
+    {
+
+        for (int i = 2; i < k; i++)
+        {
+            if (k % i == 0)
+            {
+                return false;
+            }
+
+        }
+
+        return true;
+        
+
+    }
+    /*
+    Console.WriteLine("sayi: " + i);
+    Console.WriteLine(isPrimeNum(testNum));
+    */
+    if(isPrimeNum(testNum) == true)
+    {
+        Console.WriteLine("sayi: " + i);
+    }
+
+}
+
+
