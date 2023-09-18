@@ -29,6 +29,43 @@ foreach (var item in squareNumbers)
 
 // F2 - 1
 
+int[] primeNumbers = new int[20];
+bool isPrime = true;
+for (int i = 2; i < 100; i++)
+{
+    for (int j = 2; j < 100; j++)
+    {
+        if (i % j == 0)
+        {
+            
+            Console.WriteLine(!isPrime + " ,asal sayi degil : " + i);
+            break;
+        }
+        else
+        {
+
+            if (isPrime)
+            {
+
+                Console.WriteLine(isPrime + " ,asal sayi: " + i);
+                primeNumbers[i - 2] = i;
+                if (primeNumbers.Length > 20)
+                {
+                    break;
+                }
+                
+
+                break;
+                
+            }
+
+        }
+    }
+}
+foreach (var item in primeNumbers)
+{
+    Console.WriteLine(primeNumbers);
+}
 
 
 
