@@ -1,5 +1,5 @@
-﻿
-//F1 
+﻿/*
+//F1  
 int[] naturalNumbers = new int[20];
 int[] evenNumbers = new int[20];
 int[] squareNumbers = new int[20];
@@ -24,47 +24,45 @@ foreach (var item in squareNumbers)
 {
     Console.WriteLine(item);
 }
-
+*/
 
 
 // F2 - 1
 
-int[] primeNumbers = new int[20];
-bool isPrime = true;
-for (int i = 2; i < 100; i++)
+int n = 20;
+int[] primeNumbers = new int[n];
+int firstPrime = 2;
+int i = 0;
+
+while (true)
 {
-    for (int j = 2; j < 100; j++)
+    bool isPrime = true;
+    for (int j = 2; j < firstPrime; j++)
     {
-        if (i % j == 0)
+        if (firstPrime % j == 0)
         {
-            
-            Console.WriteLine(!isPrime + " ,asal sayi degil : " + i);
+            //Console.WriteLine("not prime : " + firstPrime);
+            isPrime = false;
             break;
         }
-        else
+    }
+
+    if (isPrime)
+    {
+        //Console.WriteLine("prime: " + firstPrime);
+        primeNumbers[i] = firstPrime;
+        i++;
+        if (i == 20)
         {
-
-            if (isPrime)
-            {
-
-                Console.WriteLine(isPrime + " ,asal sayi: " + i);
-                primeNumbers[i - 2] = i;
-                if (primeNumbers.Length > 20)
-                {
-                    break;
-                }
-                
-
-                break;
-                
-            }
-
+            break;
         }
     }
+    firstPrime++;
 }
+
 foreach (var item in primeNumbers)
 {
-    Console.WriteLine(primeNumbers);
+    Console.WriteLine(item);
 }
 
 
@@ -87,7 +85,7 @@ foreach(var item in fibonacciNumbers)
 {
     Console.WriteLine("fibonacci num: " + item);
 }
-*/
+
 
 
 
@@ -142,3 +140,5 @@ foreach (var item in newFibonacciNumList)
 {
     Console.WriteLine("fibonacci num: " + item);
 }
+
+*/

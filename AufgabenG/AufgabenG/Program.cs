@@ -141,5 +141,11 @@ foreach (var charachter in sentences)
     length++;
     Console.WriteLine("length of sentences: " + length);
 
+    if(charachter == "n")
+    {
+        countofN++;
+        Console.WriteLine(countofN);
+    }
+
 }
 
