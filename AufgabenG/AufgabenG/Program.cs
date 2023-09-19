@@ -130,7 +130,7 @@ for (int i = 2; i <= 100; i++)
 }
 
 
-// G4
+// G4- Utility funktionen
 string sentences = "Nerds sind nicht normal";
 
 int length = 0;
@@ -141,11 +141,12 @@ foreach (var charachter in sentences)
     length++;
     Console.WriteLine("length of sentences: " + length);
 
+    /*
     if(charachter == "n")
     {
         countofN++;
         Console.WriteLine(countofN);
     }
-
+    */
 }
 
