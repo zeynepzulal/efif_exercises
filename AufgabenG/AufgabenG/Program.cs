@@ -1,19 +1,25 @@
 ﻿
-/* String - Methoden
+
+//String - Methoden
 Console.WriteLine("Please Write a short text");
-string text = Console.ReadLine();
+try
+{
+    string text = Console.ReadLine();
+    Console.WriteLine("your text: " + text);
+    string newText = text.Remove(0, 3);
+    Console.WriteLine(text.Length);
+    newText = newText.Remove(newText.Length - 3, 3);
+    Console.WriteLine(newText);
+}
+catch (Exception e)
+{
+    Console.WriteLine(e);
+}
 
 
-Console.WriteLine("your text: " + text);
 
-string newText = text.Remove(0, 3);
-Console.WriteLine(newText);
-*/
 
-/*
 //Funktionen
-using System.Threading.Channels;
-
 int sq = square(3);
 Console.WriteLine(sq);
 static int square(int x)
@@ -26,9 +32,7 @@ static void SayHi(string name)
     // void-function: does something (print to console in this case)
     // but doesn't return anything
     Console.WriteLine("Hello, dear " + name + "!");
-} */
-
-
+}
 
 
 
@@ -56,22 +60,31 @@ Console.WriteLine(result);
 
 
 //G1 - 3
-Console.WriteLine("enter a number");
-int enteredNum = int.Parse(Console.ReadLine());
-static bool isEven(int a)
+try
 {
-    if (a % 2 == 0)
+    Console.WriteLine("enter a number");
+    int enteredNum = int.Parse(Console.ReadLine());
+    static bool isEven(int a)
     {
-        return true;
+        if (a % 2 == 0)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
     }
 
-    else
-    {
-        return false;
-    }
+    Console.WriteLine(isEven(enteredNum));
+}
+catch (Exception e)
+{
+    Console.WriteLine(e);
 }
 
-Console.WriteLine(isEven(enteredNum));
+
 
 
 
@@ -104,7 +117,6 @@ for (int i = 2; i <= 100; i++)
     int testNum = i;
     static bool isPrimeNum(int k)
     {
-
         for (int i = 2; i < k; i++)
         {
             if (k % i == 0)
@@ -113,40 +125,117 @@ for (int i = 2; i <= 100; i++)
             }
 
         }
-
         return true;
-
-
     }
-    /*
-    Console.WriteLine("sayi: " + i);
-    Console.WriteLine(isPrimeNum(testNum));
-    */
+
     if (isPrimeNum(testNum) == true)
     {
         Console.WriteLine("sayi: " + i);
     }
-
 }
 
 
-// G4- Utility funktionen
-string sentences = "Nerds sind nicht normal";
 
-int length = 0;
-int countofN = 0;
-foreach (var charachter in sentences)
+
+// G4 - 1
+
+
+
+string sentences = "Hello";
+static int Length(string t)
 {
-    Console.WriteLine(charachter);
-    length++;
-    Console.WriteLine("length of sentences: " + length);
-
-    /*
-    if(charachter == "n")
+    int index = 0;
+    while (true)
     {
-        countofN++;
-        Console.WriteLine(countofN);
+        try
+        {
+            int eleman = t[index];
+            index++;
+        }
+        catch (Exception e)
+        {
+            break;
+        }
     }
-    */
+    return index;
 }
+Console.WriteLine(Length(sentences));
+
+
+
+// G4 - 2
+char karakter = 'l';
+static int NumberOfChar(char t, string cümle)
+{
+    int countOfN = 0;
+    for (int i = 0; i < cümle.Length; i++)
+    {
+        if (cümle[i] == t)
+        {
+            countOfN++;
+        }
+    }
+    return countOfN;
+}
+Console.WriteLine(NumberOfChar(karakter, sentences));
+
+
+
+
+//G4 - 3
+char harf = 'a';
+static int PositionOfKarakter(char c, string cümle)
+{
+    for (int i = 0; i < cümle.Length; i++)
+    {
+        if (cümle[i] == c)
+        {
+            return i;
+        }
+    }
+    return -1;
+
+}
+Console.WriteLine(PositionOfKarakter(harf, sentences));
+
+
+
+// G4-4
+
+
+string sentences2 = "Be the change you want to see in the world";
+char splitChar = ' ';
+
+static List<string> Split(string s, char c)
+{
+    List<string> newList = new List<string>();
+    List<int> indexNumberOfChar = new List<int>();
+
+    int index = 0;
+    for (int i = 0; i < s.Length; i++)
+    {
+        if (s[i] == c)
+        {
+            //Console.WriteLine(i);
+            indexNumberOfChar.Add(i);
+            string a = s.Substring(index, i - index);
+            index = i + 1;
+            //Console.WriteLine(a);
+            newList.Add(a);
+
+        }
+    }
+    string lastWord = s.Substring(index);
+    newList.Add(lastWord);
+
+    return newList;
+}
+
+List<string> res = Split(sentences2, splitChar);
+foreach (var el in res)
+{
+    Console.WriteLine(el);
+}
+
+
 
